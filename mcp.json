@@ -2,41 +2,24 @@
   "protocolVersion": "2024-11-05",
   "serverInfo": {
     "name": "Quantiva Intelligence",
-    "description": "Advanced AI agent for quantitative analysis, market forecasting, and financial modeling",
-    "version": "1.0.0",
-    "website": "https://github.com/[username-mu]/quantiva-mcp"
+    "description": "Advanced AI agent for quantitative analysis...",
+    "version": "1.0.0"
   },
   "tools": [
     {
       "name": "data_analysis",
-      "description": "Tool for quantitative data analysis using machine learning",
-      "inputSchema": {
-        "type": "object",
-        "properties": {
-          "data": { "type": "string", "description": "CSV or JSON data to analyze" }
-        }
-      }
+      "description": "Tool for quantitative data analysis",
+      "inputSchema": { "type": "object" }
     },
     {
       "name": "chart_generation",
-      "description": "Tool to generate financial charts and visualizations",
-      "inputSchema": {
-        "type": "object",
-        "properties": {
-          "type": { "type": "string", "enum": ["line", "bar", "candlestick"] }
-        }
-      }
+      "description": "Tool to generate financial charts",
+      "inputSchema": { "type": "object" }
     },
     {
       "name": "forecast_model",
-      "description": "Tool for market forecasting using ML models",
-      "inputSchema": {
-        "type": "object",
-        "properties": {
-          "asset": { "type": "string" },
-          "timeframe": { "type": "string", "enum": ["1d", "7d", "30d"] }
-        }
-      }
+      "description": "Tool for market forecasting",
+      "inputSchema": { "type": "object" }
     }
   ],
   "prompts": [
@@ -54,7 +37,7 @@
   "resources": [
     {
       "name": "market_data_feeds",
-      "description": "Real-time market data from multiple exchanges",
+      "description": "Real-time market data feeds",
       "type": "api"
     }
   ]
