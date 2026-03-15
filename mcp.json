@@ -1,0 +1,11 @@
+{
+  "name": "quantiva-mcp",
+  "version": "1.0.0",
+  "tools": [
+    {
+      "name": "get_config",
+      "description": "Mengambil konfigurasi MCP",
+      "inputSchema": { "type": "object" }
+    }
+  ]
+}
