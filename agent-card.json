@@ -1,0 +1,36 @@
+{
+  "id": "dataquant-pro",
+  "name": "DataQuant Pro",
+  "description": "High-performance AI analytics agent for quantitative analysis and automated reporting",
+  "version": "0.3.0",
+  "url": "https://9mcxmf-3002.csb.app",
+  "skills": [
+    {
+      "id": "pattern_detection",
+      "name": "Pattern Detection",
+      "description": "Detect patterns in structured datasets"
+    },
+    {
+      "id": "dashboard_generation",
+      "name": "Dashboard Generation",
+      "description": "Generate interactive dashboards from data"
+    },
+    {
+      "id": "financial_forecasting",
+      "name": "Financial Forecasting",
+      "description": "Build forecasting models for financial data"
+    },
+    {
+      "id": "automated_reporting",
+      "name": "Automated Reporting",
+      "description": "Generate automated reports on schedule"
+    }
+  ],
+  "capabilities": {
+    "streaming": true,
+    "pushNotifications": false
+  },
+  "authentication": {
+    "type": "none"
+  }
+}
