@@ -39,8 +39,8 @@
         <pre id="json">Loading configuration...</pre>
     </div>
     <script>
-        // Fetch and display the MCP configuration
-        fetch('/quantiva-mcp/.well-known/mcp.json')
+        // Gunakan path relatif yang benar
+        fetch('.well-known/mcp.json')
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP ${response.status}`);
