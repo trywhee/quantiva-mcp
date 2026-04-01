@@ -1,30 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>DataQuant Pro - MCP Configuration</title>
-    <style>
-        body { background: #0a0a0a; color: #e0e0e0; font-family: monospace; padding: 20px; margin: 0; }
-        pre { white-space: pre-wrap; background: #1a1a1a; padding: 20px; border-radius: 8px; border: 1px solid #333; }
-        .status { color: #4ade80; margin-bottom: 12px; }
-        .container { max-width: 1200px; margin: 0 auto; }
-    </style>
+    <meta http-equiv="refresh" content="0; url=./.well-known/mcp.json">
 </head>
 <body>
-    <div class="container">
-        <div class="status">✓ DataQuant Pro - MCP Server Configuration</div>
-        <pre id="json">Loading...</pre>
-    </div>
-    <script>
-        // Gunakan URL lengkap untuk memastikan tidak ada error path
-        fetch('https://trywhee.github.io/quantiva-mcp/.well-known/mcp.json')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('json').textContent = JSON.stringify(data, null, 2);
-            })
-            .catch(error => {
-                document.getElementById('json').textContent = 'Error: ' + error.message;
-            });
-    </script>
+    <p>Redirecting to <a href="./.well-known/mcp.json">MCP Configuration</a>...</p>
 </body>
 </html>
