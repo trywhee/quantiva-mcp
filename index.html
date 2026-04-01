@@ -1,37 +1,62 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DataQuant Pro - AI Analytics Agent</title>
+    <title>DataQuant Pro - MCP Configuration</title>
     <style>
-        body { font-family: system-ui, -apple-system, sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; line-height: 1.5; }
-        h1 { color: #2563eb; }
-        a { color: #2563eb; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .card { background: #f3f4f6; padding: 20px; border-radius: 12px; margin: 20px 0; }
+        body {
+            background: #0a0a0a;
+            color: #e0e0e0;
+            font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+            padding: 20px;
+            margin: 0;
+        }
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            background: #1a1a1a;
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid #333;
+            font-size: 14px;
+            line-height: 1.5;
+            overflow-x: auto;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .status {
+            color: #4ade80;
+            font-size: 12px;
+            margin-bottom: 12px;
+        }
     </style>
 </head>
 <body>
-    <h1>🤖 DataQuant Pro</h1>
-    <p>High-performance AI analytics agent for quantitative analysis and automated reporting.</p>
-    
-    <div class="card">
-        <h3>📡 Endpoints & Configurations</h3>
-        <ul>
-            <li><a href="/quantiva-mcp/.well-known/mcp.json" target="_blank">MCP Configuration</a> (<code>/.well-known/mcp.json</code>)</li>
-            <li><a href="/quantiva-mcp/agent-card.json" target="_blank">A2A Agent Card</a> (<code>/agent-card.json</code>)</li>
-        </ul>
+    <div class="container">
+        <div class="status">✓ DataQuant Pro - MCP Server Configuration</div>
+        <pre id="json">Loading configuration...</pre>
     </div>
-    
-    <div class="card">
-        <h3>⛓️ ERC-8004 Registration</h3>
-        <p>Agent ini terdaftar di blockchain Celo untuk discovery dan reputasi on-chain.</p>
-        <p><strong>Agent ID:</strong> <em>(isi dengan ID Anda setelah registrasi)</em><br>
-        <strong>Registry:</strong> <code>0x8004A169FB4a3325136EB29fA0ceB6D2e539a432</code> (Celo Mainnet)</p>
-    </div>
-
-    <hr>
-    <p style="font-size: 0.85em; color: #6b7280;">DataQuant Pro - Powered by ERC-8004 Trustless Agents</p>
+    <script>
+        // Fetch and display the MCP configuration
+        fetch('/quantiva-mcp/.well-known/mcp.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                document.getElementById('json').textContent = JSON.stringify(data, null, 2);
+            })
+            .catch(error => {
+                document.getElementById('json').innerHTML = `{
+  "error": "Unable to load configuration",
+  "message": "${error.message}",
+  "note": "Please ensure .well-known/mcp.json exists"
+}`;
+            });
+    </script>
 </body>
 </html>
